@@ -24,11 +24,13 @@ $app->get('/usuario[/]', \UsuarioAPI::class . ':TraerTodos');
 $app->post('/login[/]', \TokenAPI::class . ':GenerarToken');
 //pelicula
 $app->get('/pelicula[/]', \PeliculaAPI::class . ':TraerTodos');
-$app->post('/pelicula/cargar[/]', \PeliculaAPI::class . ':Cargar');
-
+$app->post('/pelicula/cargar[/]', \PeliculaAPI::class . ':CargarConImagen');
+$app->post('/pelicula/eliminar[/]', \PeliculaAPI::class . ':Eliminar');
 //Actor
 $app->get('/actor[/]', \ActorAPI::class . ':TraerTodos');
 $app->post('/actor/cargar[/]', \ActorAPI::class . ':Cargar');
+
+$app->post('/pelicula/foto[/]', \PeliculaAPI::class . ':Foto');
 
 
 $app->run();

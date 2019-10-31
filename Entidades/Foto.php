@@ -38,15 +38,24 @@
                     
                     }
         } 
-        function Subir_Imagen($Input, $Ruta, $Foto, $Miniatura, $AnchoMax, $AltoMax){
+        function Subir_Imagen($Input, $Ruta, $NombreFoto, $Miniatura, $AnchoMax, $AltoMax){
+            /**
+             * Sube una imagen 
+             * @param string $Input Nombre del parametro ej ['foto']
+             * @param string $Ruta Ruta donde se guardara la foto Termina con '/' ej /Fotos/FotosDePerfil/
+             * @param string $NombreFoto Nombre de la foto
+             * @param string $Miniatura Si recibe 'SI' crea una miniatura sino no.
+             * @param int $AnchoMax Ancho maximo en px.
+             * @param int $AltoMax Alto maximo en px.
+             */
             /*$Respuesta = array();
             $Respuesta['Script']="";*/
 
             $NombreOriginal  = basename($_FILES[$Input]['name']);
             $Extension = pathinfo($NombreOriginal, PATHINFO_EXTENSION);
         
-            if ($Foto != '') { //Si el nombre esta vacio uso el orginal
-                $Nombre = $Foto.".".$Extension;//.'.'.$Extension; si viene sin extension la debo agregar
+            if ($NombreFoto != '') { //Si el nombre esta vacio uso el orginal
+                $Nombre = $NombreFoto.".".$Extension;//.'.'.$Extension; si viene sin extension la debo agregar
             } else {
                 $Nombre = $_FILES[$Input]['name'].$Extension;
             }
