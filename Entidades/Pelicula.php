@@ -72,7 +72,7 @@ class Pelicula
  * @param string $FechaDeEstreno fecha de estreno de la pelicula
  * @param int    $cantidadDePublico cantidad de publico
  * @param string $rutaDeFoto ruta de la foto
- * @return Account
+ * @return Resultado
  */
     public static function Insertar($nombre, $Tipo, $FechaDeEstreno, $cantidadDePublico, $rutaDeFoto)
     {
